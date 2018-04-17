@@ -110,6 +110,11 @@ DEFINES   += COIN_P2PKH_VERSION=62 COIN_P2SH_VERSION=85 COIN_FAMILY=2 COIN_COINI
 APPNAME ="Stealthcoin"
 APP_LOAD_PARAMS += --path $(APP_PATH)
 else ifeq ($(COIN),viacoin)
+# SHIELD
+DEFINES   += COIN_P2PKH_VERSION=63 COIN_P2SH_VERSION=33 COIN_FAMILY=2 COIN_COINID=\"SHIELD\" COIN_COINID_HEADER=\"SHIELD\" COIN_COLOR_HDR=0xEDF762 COIN_COLOR_DB=0xA0A0A0 COIN_COINID_NAME=\"SHIELD\" COIN_COINID_SHORT=\"XSH\" COIN_KIND=COIN_KIND_SHIELD COIN_FLAGS=FLAG_PEERCOIN_SUPPORT
+APPNAME ="SHIELD"
+APP_LOAD_PARAMS += --path $(APP_PATH)
+else ifeq ($(COIN),shield)
 # Viacoin
 DEFINES   += COIN_P2PKH_VERSION=71 COIN_P2SH_VERSION=33 COIN_FAMILY=1 COIN_COINID=\"Viacoin\" COIN_COINID_HEADER=\"VIACOIN\" COIN_COLOR_HDR=0x414141 COIN_COLOR_DB=0xA0A0A0 COIN_COINID_NAME=\"Viacoin\" COIN_COINID_SHORT=\"VIA\" COIN_KIND=COIN_KIND_VIACOIN COIN_FLAGS=FLAG_SEGWIT_CHANGE_SUPPORT
 APPNAME ="Viacoin"
@@ -134,7 +139,7 @@ APPNAME ="HCash"
 APP_LOAD_PARAMS += --path $(APP_PATH)
 else
 ifeq ($(filter clean,$(MAKECMDGOALS)),)
-$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, bitcoin_gold, litecoin, dogecoin, dash, zcash, komodo, stratis, peercoin, posw, pivx, viacoin, vertcoin, stealthcoin, digibyte, qtum, hcash) 
+$(error Unsupported COIN - use bitcoin_testnet, bitcoin, bitcoin_cash, bitcoin_gold, litecoin, dogecoin, dash, zcash, komodo, shield, stratis, peercoin, posw, pivx, viacoin, vertcoin, stealthcoin, digibyte, qtum, hcash) 
 endif
 endif
 
